@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_rewan2_rewan2,rewan2.rewan2,model_rewan2_basic_model1,base.group_user,1,1,1,1
+access_rewan2_rewan22,rewan2.rewan22,model_rewan2_basic_model2,base.group_user,1,1,1,1
+access_rewan2_rewan23,rewan2.rewan23,model_rewan2_order,base.group_user,1,1,1,1
+access_rewan2_change_date_wizard,access_rewan2_change_date_wizard,model_rewan2_change_date_wizard,base.group_user,1,1,1,1
+
+

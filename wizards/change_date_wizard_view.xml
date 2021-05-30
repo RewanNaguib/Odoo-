@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="change_date_wizard_form_view">
+      <field name="name"> Change Date Wizard Form </field>
+      <field name="model">rewan2.change.date.wizard</field>
+      <field name="arch" type="xml">
+        <form>
+        <h2> Do you want to duplicate this record? </h2>
+        <!-- <group>
+          <field name="date"/>
+        </group> -->
+        <div>
+         <button name="action_change_date" string="Yes" type="object" class="oe_highlight"/>
+          <button string="No"/>
+        </div>
+
+         </form>
+      </field>
+    </record>
+
+  
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="change_date_wizard_action">
+      <field name="name"> Change Date </field>
+      <field name="res_model">rewan2.change.date.wizard</field>
+      <field name="view_mode">form</field>
+      <field name="target">new</field>
+      <field name="binding_model_id" ref="model_rewan2_change_date_wizard"/>
+    </record>
+    </data>
+    </odoo>
+

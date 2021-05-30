@@ -1,0 +1,101 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="rewan2.order_list_view">
+      <field name="name">rewan2 list</field>
+      <field name="model">rewan2.order</field>
+      <field name="arch" type="xml">
+        <tree>
+         <field name="name"/>
+          <field name="date"/>
+          <field name="model_2"/>
+        </tree>
+      </field>
+    </record>
+
+      
+    <record model="ir.ui.view" id="rewan2.order_calendar_view">
+      <field name="name">rewan2 list</field>
+      <field name="model">rewan2.order</field>
+      <field name="arch" type="xml">
+    <calendar date_start="date" string="Order calendar">
+       <field name="name"/>
+    </calendar>    
+      </field>
+    </record>
+
+ <!-- new -->
+
+    <record model="ir.ui.view" id="rewan2.order_form_view">
+      <field name="name">rewan2 form</field>
+      <field name="model">rewan2.order</field>
+      <field name="arch" type="xml">
+        <form>
+         <header>
+           <button name="%(change_date_wizard_action)d" type="action" string="Duplicate Record"  />
+           </header> 
+           <sheet>
+              <h2>
+              <field name="name"/>
+              </h2>
+          <group>
+          <field name="name"/>
+          <field name="partner"/>
+          <field name="date"/>
+          <field name="model_2"/>
+          </group>
+          </sheet>
+          </form>
+      </field>
+    </record>
+
+
+
+
+
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="rewan2.action_window_order">
+      <field name="name">rewan2 window</field>
+      <field name="res_model">rewan2.order</field>
+      <field name="view_mode">tree,kanban,calendar,form</field>
+    </record>
+
+    <!-- server action to the one above -->
+
+    <!-- <record model="ir.actions.server" id="rewan2.action_server">
+      <field name="name">rewan2 server</field>
+      <field name="model_id" ref="model_rewan2_rewan2"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record> -->
+
+    <!-- Top menu item -->
+
+    <menuitem name="rewan2" id="rewan2.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="rewan2.menu_1" parent="rewan2.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="rewan2.menu_2" parent="rewan2.menu_root"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="List Model 3" id="rewan2.menu_3_list" parent="rewan2.menu_1"
+              action="rewan2.action_window_order"/>
+    <!-- <menuitem name="Server to list" id="rewan2" parent="rewan2.menu_2"
+              action="rewan2.action_server"/> -->
+
+  </data>
+</odoo>
+
+
